@@ -1,0 +1,18 @@
+#install os
+FROM node:alpine
+
+
+#set working directory
+WORKDIR '/app'
+
+#cache package.json
+COPY package.json  .
+
+#Run command 
+RUN npm install 
+
+#copy file 
+COPY . .    
+
+#command
+CMD ["npm", "run","start" ]
